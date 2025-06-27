@@ -98,3 +98,8 @@ button:focus-visible {
   justify-content: center;
   min-height: 50vh;
 } */
+
+/* @import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite"; */
