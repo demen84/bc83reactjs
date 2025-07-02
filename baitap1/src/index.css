@@ -99,7 +99,7 @@ button:focus-visible {
   min-height: 50vh;
 } */
 
-/* @import "tailwindcss";
+@import "tailwindcss";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
-@source "../node_modules/flowbite"; */
+@source "../node_modules/flowbite";

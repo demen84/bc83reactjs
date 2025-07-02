@@ -6,29 +6,32 @@ import ChangeCarColor from "./change-car-color";
 import ListKeys from "./list-keys";
 import Communication from "./communication";
 import ShoppingPhone from "./shopping-phone";
+import LiftingStateUp from "./lifting-state-up";
+import ShopShoes from "./shop-shoes";
 
 function App() {
-  // const [count, setCount] = useState(0)
   return (
     <>
-      <Baitap2 />
-      {/* <State />
+      {/* <Baitap2 /> */}
+      {/* <State /> */}
       <hr />
-      <ChangeCarColor /> */}
+      <ChangeCarColor />
       <hr />
       <Glasses />
       {/* <hr /> */}
-      {/* <ListKeys />
+      {/* <ListKeys /> */}
+      <br />
+      {/* <hr /> */}
+      {/* <Communication /> */}
+      {/* <br /> */}
+      <hr />
+      <ShoppingPhone />
       <br />
       <hr />
-      <Communication />
+      <LiftingStateUp />
       <br />
       <hr />
-      <ShoppingPhone /> */}
-      <br />
-      <br />
-      <br />
-      <br />
+      <ShopShoes />
       <br />
       <br />
       <br />

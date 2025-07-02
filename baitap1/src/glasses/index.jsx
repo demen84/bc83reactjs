@@ -32,7 +32,8 @@ export default function Glasses() {
 
     return (
         <div style={{ textAlign: 'center', backgroundImage: 'url("./glassesImage/background.jpg")', backgroundSize: 'cover' }}>
-            <h1>🕶️ Thử mắt kính cho người mẫu</h1>
+            <h1 className='text-4xl text-center text-blue-500'>🕶️ Thử mắt kính cho người mẫu</h1>
+            <br />
 
             {/* Khu vực hiển thị mặt người và kính */}
             <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -81,7 +82,7 @@ export default function Glasses() {
             </div>
 
             {/* Khu vực chọn kính */}
-            <h3 style={{ marginTop: '2rem' }}>Chọn kính bên dưới 👇</h3>
+            <h3 className='text-2xl' style={{ marginTop: '2rem' }}>Chọn kính bên dưới 👇</h3>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 15, marginTop: 20 }}>
                 {/* {dataGlasses.map((glass) => (
                     <img
