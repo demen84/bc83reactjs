@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import dataphones from './dataphone.json';
-import Phone from './phone';
+import { useState } from 'react';
+import dataPhoneJSON from "./dataphones.json";
+import Phone from "./phone";
 import Specifications from './specifications';
-import Modal from './modal';
+import Modal from "./modal";
 
 export default function ShoppingPhone() {
-    const [phones, setPhones] = useState(dataphones);
+    const [phones, setPhones] = useState(dataPhoneJSON);
+
     const [phoneDetail, setPhoneDetail] = useState(phones[0]); //useState(null);
 
     const [carts, setCarts] = useState([]);
 
     const renderPhones = () => {
-        return phones.map((phone, index) => {
-            // return <Phone key={index} phone={phone} />
-            return <Phone key={phone.maSP} phone={phone}
-                getPhoneDetails={handleGetPhoneDetail}
+        return phones.map((phone) => {
+            return <Phone key={phone.id} phone={phone}
+                getPhone={handleGetPhone}
                 handleAddCart={handleAddCart} />
-        });
-    };
+            // <Phone key={phone.id} phone={phone} />: truyền key & phone (cả data json) qua component con (Phone)
+        })
+    }
 
-    const handleGetPhoneDetail = (phone) => {
+    //Xử lý nhận data từ component con (Phone())
+    const handleGetPhone = (phone) => {
         setPhoneDetail(phone);
-    };
+    }
 
     const handleAddCart = (phone) => {
         const newCarts = [...carts];
 
         //Kiểm tra sp đã tồn tại trong carts hay chưa?
-        const index = newCarts.findIndex((sp) => sp.maSP === phone.maSP);
+        const index = newCarts.findIndex((sp) => sp.id === phone.id);
 
         if (index === -1) {
             //sp chưa tồn tại trong giỏ hàng (carts)
@@ -42,7 +44,7 @@ export default function ShoppingPhone() {
 
     const handleCartQty = (productID, qty) => {
         const newCarts = [...carts];
-        const index = newCarts.findIndex((sp) => sp.maSP === productID);
+        const index = newCarts.findIndex((sp) => sp.id === productID);
 
         if (index !== -1) { //nếu đã tìm thấy (đã tồn tại sp trong carts thì xử lý tăng/giảm qty)
             newCarts[index].qty += qty;
@@ -64,7 +66,7 @@ export default function ShoppingPhone() {
 
     const handleDeleteCart = (id) => {
         const newCarts = [...carts];
-        const index = newCarts.findIndex(sp => sp.maSP === id);
+        const index = newCarts.findIndex(sp => sp.id === id);
 
         if (index !== -1) {
             //nếu tìm thấy thì xóa ra khỏi carts
@@ -77,13 +79,14 @@ export default function ShoppingPhone() {
     }
 
     return (
-        <div className='container mx-auto mt-10'>
-            <h1 className='text-5xl text-center mb-5'>Shopping Phone</h1>
+        <div className='container mx-auto'>
             <Modal carts={carts} handleCartQty={handleCartQty} handleDeleteCart={handleDeleteCart} />
-            <div className='grid grid-cols-3 gap-5'>
+            <h1 className='text-5xl text-center text-red-800'>Shopping Phone</h1>
+            <div className='grid grid-cols-4 gap-6'>
+                {/* <Phone /><Phone /><Phone /> */}
                 {renderPhones()}
             </div>
             <Specifications phoneDetail={phoneDetail} />
-        </div>
+        </div >
     );
 }

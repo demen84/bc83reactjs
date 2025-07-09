@@ -1,38 +1,36 @@
-import { useState } from 'react'
-import dataphones from './dataphone.json';
-import Phone from './phone';
-import Specifications from './specifications';
-import Modal from './modal';
+import { useState } from 'react';
+import datashoes from './datashoes.json';
+import Shoes from './shoes';
+import ModalCart from './modal';
 
-export default function ShoppingPhone() {
-    const [phones, setPhones] = useState(dataphones);
-    const [phoneDetail, setPhoneDetail] = useState(phones[0]); //useState(null);
+export default function ShopShoes() {
+    const [shoes, setShoes] = useState(datashoes);
+
+    // const [shoesDetail, setShoesDetail] = useState(shoes[0]); //useState(null);
 
     const [carts, setCarts] = useState([]);
 
-    const renderPhones = () => {
-        return phones.map((phone, index) => {
-            // return <Phone key={index} phone={phone} />
-            return <Phone key={phone.maSP} phone={phone}
-                getPhoneDetails={handleGetPhoneDetail}
+    const renderShoes = () => {
+        return shoes.map((shoe) => {
+            return <Shoes key={shoe.id} shoe={shoe}
                 handleAddCart={handleAddCart} />
         });
-    };
+    }
 
-    const handleGetPhoneDetail = (phone) => {
-        setPhoneDetail(phone);
-    };
+    // const handleGetShoeDetail = (shoe) => {
+    //     setShoesDetail(shoe);
+    // };
 
-    const handleAddCart = (phone) => {
+    const handleAddCart = (shoe) => {
         const newCarts = [...carts];
 
         //Kiểm tra sp đã tồn tại trong carts hay chưa?
-        const index = newCarts.findIndex((sp) => sp.maSP === phone.maSP);
+        const index = newCarts.findIndex((sp) => sp.id === shoe.id);
 
         if (index === -1) {
             //sp chưa tồn tại trong giỏ hàng (carts)
-            const newPhone = { ...phone, qty: 1 };
-            newCarts.push(newPhone);
+            const newShoe = { ...shoe, qty: 1 };
+            newCarts.push(newShoe);
         } else { //đã tồn tại sp trong carts, vì vậy ta chỉ cần tăng số lượng
             newCarts[index].qty += 1;
         }
@@ -40,9 +38,9 @@ export default function ShoppingPhone() {
         setCarts(newCarts);
     }
 
-    const handleCartQty = (productID, qty) => {
+    const handleCartQty = (id, qty) => {
         const newCarts = [...carts];
-        const index = newCarts.findIndex((sp) => sp.maSP === productID);
+        const index = newCarts.findIndex((sp) => sp.id === id);
 
         if (index !== -1) { //nếu đã tìm thấy (đã tồn tại sp trong carts thì xử lý tăng/giảm qty)
             newCarts[index].qty += qty;
@@ -64,7 +62,7 @@ export default function ShoppingPhone() {
 
     const handleDeleteCart = (id) => {
         const newCarts = [...carts];
-        const index = newCarts.findIndex(sp => sp.maSP === id);
+        const index = newCarts.findIndex(sp => sp.id === id);
 
         if (index !== -1) {
             //nếu tìm thấy thì xóa ra khỏi carts
@@ -78,12 +76,16 @@ export default function ShoppingPhone() {
 
     return (
         <div className='container mx-auto mt-10'>
-            <h1 className='text-5xl text-center mb-5'>Shopping Phone</h1>
-            <Modal carts={carts} handleCartQty={handleCartQty} handleDeleteCart={handleDeleteCart} />
-            <div className='grid grid-cols-3 gap-5'>
-                {renderPhones()}
+            <h1 className='text-4xl text-center text-fuchsia-500'>Shop Shoes Homework - Bài tập Buổi 27-Reactjs</h1>
+            <br /><br />
+            <div className='flex justify-end'>
+                <ModalCart carts={carts} handleCartQty={handleCartQty} handleDeleteCart={handleDeleteCart} />
             </div>
-            <Specifications phoneDetail={phoneDetail} />
+            <div className='grid grid-cols-3 gap-5'>
+                {/* <Shoes /> <Shoes /> <Shoes /> */}
+                {renderShoes()}
+            </div>
+            {/* <ModalDetail /> */}
         </div>
-    );
+    )
 }

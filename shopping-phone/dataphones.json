@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Redmi 12 màu đen",
+        "screen": "AMOLED, 6.2, Full HD+",
+        "os": "Android 9.0 (Pie)",
+        "frontCam": "20 MP",
+        "backCam": "Chính 48 MP & Phụ 8 MP, 5 MP",
+        "ram": "4 GB",
+        "rom": "64 GB",
+        "price": 10900000,
+        "image": "./images/redmi12.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Samsung Galaxy S25 titan",
+        "screen": "AMOLED, FHD+ 2568 x 1440 pixels",
+        "os": "Android 10.0 (Pie); Flyme",
+        "frontCam": "48MP",
+        "backCam": "Chính 48MP & Phụ 12MP, 8MP",
+        "ram": "8GB",
+        "rom": "256GB",
+        "price": 27600000,
+        "image": "./images/samsungs25.jpg"
+    },
+    {
+        "id": 3,
+        "name": "iPhone 14 pro max",
+        "screen": "OLED, 6.5, 1242 x 2688 Pixels",
+        "os": "iOS 12",
+        "backCam": "Chính 12 MP & Phụ 8 MP",
+        "frontCam": "7 MP",
+        "ram": "4 GB",
+        "rom": "128GB",
+        "price": 25000000,
+        "image": "./images/ip14pro.jpg"
+    },
+    {
+        "id": 4,
+        "name": "iPhone 15 plus yellow",
+        "screen": "Supper Amoled",
+        "os": "iOS 16",
+        "backCam": "Chính 24MP & Phụ 12MP",
+        "frontCam": "8MP",
+        "ram": "6 GB",
+        "rom": "128GB",
+        "price": 22000000,
+        "image": "./images/ip15plus.jpg"
+    }
+]

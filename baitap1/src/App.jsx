@@ -7,7 +7,7 @@ import ListKeys from "./list-keys";
 import Communication from "./communication";
 import ShoppingPhone from "./shopping-phone";
 import LiftingStateUp from "./lifting-state-up";
-import ShopShoes from "./shop-shoes";
+import ShopShoes from "./shoes-store";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       {/* <Baitap2 /> */}
       {/* <State /> */}
       <hr />
-      <ChangeCarColor />
+      <ChangeCarColor />32.
+
       <hr />
       <Glasses />
       {/* <hr /> */}
