@@ -88,8 +88,8 @@ export default function ModalCart(props) {
                         </tbody>
                         <tfoot>
                             <tr className="text-xl bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 font-bold text-orange-500">
-                                <th scope="row" colSpan={4} className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-right">
-                                    TOTAL
+                                <th scope="row" colSpan={4} className="px-6 py-4 whitespace-nowrap dark:text-white text-right">
+                                    Total Amount :
                                 </th>
                                 {/* <td className="px-6 py-4"></td>
                                 <td className="px-6 py-4"></td>

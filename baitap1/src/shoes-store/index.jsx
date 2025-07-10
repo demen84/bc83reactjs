@@ -6,8 +6,6 @@ import ModalCart from './modal';
 export default function ShopShoes() {
     const [shoes, setShoes] = useState(datashoes);
 
-    // const [shoesDetail, setShoesDetail] = useState(shoes[0]); //useState(null);
-
     const [carts, setCarts] = useState([]);
 
     const renderShoes = () => {
@@ -16,10 +14,6 @@ export default function ShopShoes() {
                 handleAddCart={handleAddCart} />
         });
     }
-
-    // const handleGetShoeDetail = (shoe) => {
-    //     setShoesDetail(shoe);
-    // };
 
     const handleAddCart = (shoe) => {
         const newCarts = [...carts];
@@ -76,12 +70,12 @@ export default function ShopShoes() {
 
     return (
         <div className='container mx-auto mt-10'>
-            <h1 className='text-4xl text-center text-fuchsia-500'>Shop Shoes Homework - Bài tập Buổi 27-Reactjs</h1>
+            <h1 className='text-4xl text-center text-fuchsia-500'>Welcome to the Shoes Store</h1>
             <br /><br />
             <div className='flex justify-end'>
                 <ModalCart carts={carts} handleCartQty={handleCartQty} handleDeleteCart={handleDeleteCart} />
             </div>
-            <div className='grid grid-cols-3 gap-5'>
+            <div className='grid grid-cols-4 gap-7 mt-2'>
                 {/* <Shoes /> <Shoes /> <Shoes /> */}
                 {renderShoes()}
             </div>
