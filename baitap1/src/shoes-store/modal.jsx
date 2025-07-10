@@ -97,7 +97,14 @@ export default function ModalCart(props) {
                                 <td className="px-6 py-4 text-right">
                                     ${carts.reduce((total, item) => total + (item.price * item.qty), 0).toLocaleString()}
                                 </td>
-                                <td className="px-6 py-4"></td>
+                                <td className="px-6 py-4">
+                                    <button
+                                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 font-medium text-sm"
+                                        onClick={() => alert('Chức năng chưa hoàn thiện')}
+                                    >
+                                        Checkout
+                                    </button>
+                                </td>
                             </tr>
                         </tfoot>
                     </table>

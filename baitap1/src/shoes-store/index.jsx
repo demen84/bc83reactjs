@@ -70,7 +70,7 @@ export default function ShopShoes() {
 
     return (
         <div className='container mx-auto mt-10'>
-            <h1 className='text-4xl text-center text-fuchsia-500'>Welcome to the Shoes Store</h1>
+            <h1 className='text-5xl text-center text-fuchsia-500 font-bold'>Welcome to the Shoes Store</h1>
             <br /><br />
             <div className='flex justify-end'>
                 <ModalCart carts={carts} handleCartQty={handleCartQty} handleDeleteCart={handleDeleteCart} />
